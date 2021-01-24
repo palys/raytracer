@@ -5,12 +5,18 @@
 
 int main() {
     std::cout << "test\n";
-    Image m(50, 50);
+    Image m(60, 50);
     m.set(5, 7, RGBColor(0.5, 0.7, 0.1));
-    std::cout << m.get(0, 0) << "\n" << m.get(5, 7) << "\n";
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            m.set(i + 10, j + 10, RGBColor(1, 0, 0));
+            m.set(i + j + 20, j + 10, RGBColor(0, 1, 0));
+            m.set(i + 30, i + j + 20, RGBColor(0, 0, 1));
+        }
+    }
     FileProvider fileProvider;
-    auto file = fileProvider.new_file();
-    file << "text" << "\n";
+    auto file = fileProvider.new_tga_file();
+    file.save(m);
     file.close();
     return 0;
 }

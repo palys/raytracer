@@ -4,9 +4,9 @@
 #include "RGBColor.hpp"
 
 class Image {
-    int width, height;
     RGBColor ** image;
 public:
+    int width, height;
     Image(int width, int height);
     ~Image();
     Image(const Image & im);
