@@ -1,19 +1,24 @@
 #include<iostream>
-#include "Image.hpp"
-#include "RGBColor.hpp"
-#include "TGAFile.hpp"
+#include "Vector3D.hpp"
 
 int main() {
-    std::cout << "test\n";
-    Image m(60, 50);
-    m.set(5, 7, RGBColor(0.5, 0.7, 0.1));
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            m.set(i + 10, j + 10, RGBColor(1, 0, 0));
-            m.set(i + j + 20, j + 10, RGBColor(0, 1, 0));
-            m.set(i + 30, i + j + 20, RGBColor(0, 0, 1));
-        }
-    }
-    TGAFile::save(m);
+    Vector3D v1(1, 2, 3), v2(2, 5, 7);
+    std::cout << "v1: " << v1 << "\n"
+              << "v2: " << v2 << "\n"
+              << "v1 + v2: " << v1 + v2 << "\n"
+              << "v1 - v2: " << v1 - v2 << "\n"
+              << "v1 * 3: " << v1 * 3 << "\n"
+              << "3 * v2: " << 3 * v2 << "\n"
+              << "v1 * v2: " << v1 * v2 << "\n"
+              << "v1 x v2: " << (v1 ^ v2) << "\n"
+              << "v1 / 4: " << v1 / 4 << "\n"
+              << "v1.length(): " << v1.length() << "\n"
+              << "v1.length_sqr(): " << v1.length_sqr() << "\n"
+              << "-v2: " << -v2 << "\n"
+              << "v1.normal(): " << v1.normal() << "\n"
+              << "v1 += v2: " << (v1 += v2) << "\n"
+              << "v1 *= 4: " << (v1 *= 4) << "\n"
+              << "v1 -= v2: " << (v1 -= v2) << "\n"
+              << "v1 ^= v2: " << (v1 ^= v2) << "\n";
     return 0;
 }
