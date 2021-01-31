@@ -1,4 +1,5 @@
 #include "TGAFile.hpp"
+#include "FileProvider.hpp"
 
 const int HEADER_LENGTH = 18;
 
@@ -11,7 +12,7 @@ void TGAFile::close() {
     delete file;
 }
 
-void TGAFile::save(Image & image) {
+void TGAFile::save_to_file(Image & image) {
     unsigned char header[HEADER_LENGTH];
     unsigned char * pixels = new unsigned char[image.width * image.height * 3];
 
@@ -43,4 +44,12 @@ void TGAFile::save(Image & image) {
     }
 
     delete[] pixels;
+}
+
+void TGAFile::save(Image & image) {
+    FileProvider provider;
+    auto file = provider.new_file("tga");
+    TGAFile tga = TGAFile(*file);
+    tga.save_to_file(image);
+    tga.close();
 }

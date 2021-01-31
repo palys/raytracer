@@ -1,7 +1,7 @@
 #include<iostream>
 #include "Image.hpp"
 #include "RGBColor.hpp"
-#include "FileProvider.hpp"
+#include "TGAFile.hpp"
 
 int main() {
     std::cout << "test\n";
@@ -14,9 +14,6 @@ int main() {
             m.set(i + 30, i + j + 20, RGBColor(0, 0, 1));
         }
     }
-    FileProvider fileProvider;
-    auto file = fileProvider.new_tga_file();
-    file.save(m);
-    file.close();
+    TGAFile::save(m);
     return 0;
 }

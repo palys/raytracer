@@ -6,10 +6,11 @@
 
 class TGAFile {
     std::ofstream * file;
+    void save_to_file(Image & image);
+    void close();
 public:
     TGAFile(std::ofstream & file);
-    void save(Image & image);
-    void close();
+    static void save(Image & image);
 };
 
 #endif

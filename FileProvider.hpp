@@ -10,6 +10,7 @@ class FileProvider {
 public:
     FileProvider();
     std::ofstream * new_file();
+    std::ofstream * new_file(std::string extension);
     TGAFile new_tga_file();
 };
 
