@@ -11,6 +11,14 @@ public:
         s << "r=" << color.r << " g=" << color.g << " b=" << color.b;
         return s;
     }
+    RGBColor operator+(const RGBColor & c) const;
+    RGBColor operator*(const float a) const;
+    RGBColor operator/(const float a) const;
+    RGBColor operator*(const RGBColor & c) const;
+    RGBColor pow(float p) const;
+    RGBColor & operator+=(const RGBColor & c);
 };
+
+RGBColor operator*(const float a, const RGBColor & c);
 
 #endif
