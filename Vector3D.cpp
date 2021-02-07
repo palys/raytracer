@@ -1,5 +1,5 @@
 #include "Vector3D.hpp"
-#include <math.h>
+#include <cmath>
 
 Vector3D Vector3D::operator+(const Vector3D & v) const {
     return Vector3D(this->x + v.x, this->y + v.y, this->z + v.z);

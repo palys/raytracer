@@ -12,8 +12,6 @@ Hit * Plane::hit(const Ray & ray) const {
          color,
          t
       );
-   } else {
-      return new Hit();
    }
-   return nullptr; 
+   return new Hit();
 }
