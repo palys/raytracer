@@ -13,7 +13,7 @@ class Plane : public GeometricObject {
 public:
     Plane(): point(), normal() {};
     Plane(const Point3D & p, const Vector3D & n): point(p), normal(n) {};
-    virtual Hit * hit(const Ray & ray, double & tmin) const;
+    virtual Hit * hit(const Ray & ray) const;
 };
 
 #endif

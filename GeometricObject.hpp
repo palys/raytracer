@@ -7,7 +7,7 @@
 
 class GeometricObject {
 public:
-    virtual Hit* hit(const Ray & ray, double & tmin) const = 0;
+    virtual Hit* hit(const Ray & ray) const = 0;
 protected:
     RGBColor color;
 };

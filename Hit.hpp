@@ -9,7 +9,9 @@ public:
     bool hit;
     Point3D hit_point;
     RGBColor color;
-    Hit(): hit(false), hit_point(), color() {};
+    double t;
+    Hit(): hit(false), hit_point(), color(), t(0) {};
+    Hit(const Point3D hit_point, const RGBColor color, const double t): hit_point(hit_point), color(color), t(t) {};
 };
 
 #endif
